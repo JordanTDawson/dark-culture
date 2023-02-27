@@ -10,7 +10,7 @@ export default function NavBar() {
       {['lg'].map(expand => (
         <Navbar key={expand} bg="dark" variant="dark" expand={expand} className="mb-3">
           <Container fluid>
-            <Navbar.Brand className="justify-content-end">Smart Clothing</Navbar.Brand>
+            <Navbar.Brand className="justify-content-end" href="" >Smart Clothing</Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -24,8 +24,8 @@ export default function NavBar() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="flex-grow-1 pe-3">
-                  <Nav.Link href="#action1">Clothes</Nav.Link>
-                  <Nav.Link href="#action2">Blog</Nav.Link>
+                  <Nav.Link href="#catalog">Catalog</Nav.Link>
+                  <Nav.Link href="#blog">Blog</Nav.Link>
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
