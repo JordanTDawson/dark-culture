@@ -1,0 +1,14 @@
+.hero-image {
+  background-size: 100%;
+  padding: 13em;
+  background-image: url("https://www.npd.com/wp-content/uploads/2021/05/fashion-banner-1440x480.jpg");
+  background-repeat: no-repeat;
+}
+
+.hero-image-header {
+  color: white;
+}
+
+.hero-image-text {
+  color: white;
+}
