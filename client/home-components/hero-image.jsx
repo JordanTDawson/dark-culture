@@ -15,7 +15,7 @@ export default function HeroImage(props) {
       <Card.Img style={{ height: 400 }} src="https://www.npd.com/wp-content/uploads/2021/05/fashion-banner-1440x480.jpg" />
       <Card.ImgOverlay>
         <Card.Title style={cardTitle} className="text-center mt-5">Welcome to our Shop!</Card.Title>
-        <Card.Text style={cardText} className="text-center mt-3">
+        <Card.Text style={cardText} className="text-center mt-4">
           We have some of the finest clothing around! Check out our shop and you
           might find something that you would want to ship to your front doorstep!
         </Card.Text>
