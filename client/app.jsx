@@ -4,7 +4,7 @@ import Home from './pages/home';
 import Catalog from './pages/catalog';
 import Blog from './pages/blog';
 import NotFound from './pages/not-found';
-// import BrandFooter from './components/brand-footer';
+import BrandFooter from './components/brand-footer';
 import Footer from './components/footer';
 import parseRoute from './lib/parse-route';
 
@@ -37,6 +37,7 @@ export default function App() {
     <>
       <NavBar />
       { renderPage() }
+      <BrandFooter />
       <Footer />
     </>
   );
