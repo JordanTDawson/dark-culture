@@ -17,7 +17,7 @@ CREATE TABLE "public"."User" (
 
 
 
-CREATE TABLE "public"."Cart Items" (
+CREATE TABLE "public"."CartItems" (
 	"price" DECIMAL NOT NULL,
 	"productId" integer NOT NULL,
 	"cartId" integer NOT NULL,
@@ -54,8 +54,8 @@ CREATE TABLE "public"."Cart" (
 
 
 
-ALTER TABLE "Cart Items" ADD CONSTRAINT "Cart Items_fk0" FOREIGN KEY ("productId") REFERENCES "Catalog"("productId");
-ALTER TABLE "Cart Items" ADD CONSTRAINT "Cart Items_fk1" FOREIGN KEY ("cartId") REFERENCES "Cart"("cartId");
+ALTER TABLE "CartItems" ADD CONSTRAINT "Cart Items_fk0" FOREIGN KEY ("productId") REFERENCES "Catalog"("productId");
+ALTER TABLE "CartItems" ADD CONSTRAINT "Cart Items_fk1" FOREIGN KEY ("cartId") REFERENCES "Cart"("cartId");
 
 
 ALTER TABLE "Cart" ADD CONSTRAINT "Cart_fk0" FOREIGN KEY ("userId") REFERENCES "User"("userId");
