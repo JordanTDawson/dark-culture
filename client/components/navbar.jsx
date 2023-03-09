@@ -27,6 +27,7 @@ export default function NavBar() {
                   <Nav.Link href="#home">Home</Nav.Link>
                   <Nav.Link href="#catalog">Catalog</Nav.Link>
                   <Nav.Link href="#blog">Blog</Nav.Link>
+                  <Nav.Link href="#cart">Cart</Nav.Link>
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>

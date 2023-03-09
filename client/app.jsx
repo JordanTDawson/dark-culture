@@ -3,6 +3,7 @@ import NavBar from './components/navbar';
 import Home from './pages/home';
 import Catalog from './pages/catalog';
 import ProductDetails from './catalog-components/product-details';
+import Cart from './components/cart';
 import Blog from './pages/blog';
 import NotFound from './pages/not-found';
 import BrandFooter from './components/brand-footer';
@@ -35,6 +36,10 @@ export default function App() {
       const productId = route.params.get('productId');
       return <ProductDetails productId={productId}/>;
 
+    } else if (route.path === 'cart') {
+
+      const productId = route.params.get('productId');
+      return <Cart productId={productId} />;
     } else if (route.path === 'blog') {
 
       return <Blog />;
