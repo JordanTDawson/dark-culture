@@ -18,7 +18,7 @@ export default function NotFound() {
             Uh oh, we could not find the page you were looking for!
           </h3>
           <p className="text-muted">
-            <a href="#">Return to the catalog</a>
+            <a href="#home">Return to the catalog</a>
           </p>
         </div>
       </div>

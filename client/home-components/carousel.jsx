@@ -27,8 +27,8 @@ export default function HomeCarousel() {
         />
         </div>
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3>We have some pretty awesome deals on our clothes for Elf on the Shelf.</h3>
+          <p>Come check out all the different options of clothes that we hand made for your Elf on the Shelf.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -40,9 +40,9 @@ export default function HomeCarousel() {
         />
         </div>
         <Carousel.Caption>
-          <h3>Third slide label</h3>
+          <h3>Please check out my business we have had zero revenue for weeks.</h3>
           <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+            My parents said to find a niche to sell to but this was not the right niche.
           </p>
         </Carousel.Caption>
       </Carousel.Item>
