@@ -60,3 +60,11 @@ values('doll', 'Dog and Deer idk', 'https://cdn.shopify.com/s/files/1/0910/1062/
 
 insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
 values('doll', 'Elf on A Sled', 'https://cdn.shopify.com/s/files/1/0910/1062/products/cc-sled-set-1-elf_600x.jpg?v=1654852082', 250.00, 21);
+
+insert into "User" ("username", "email")
+values('Ralaxian', 'jtdawson@icloud.com')
+returning *;
+
+insert into "Cart" ("createdDate", "totalPrice", "userId")
+values('2023-03-10', 0, 1)
+returning *;

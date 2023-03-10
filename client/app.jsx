@@ -38,8 +38,8 @@ export default function App() {
 
     } else if (route.path === 'cart') {
 
-      const productId = route.params.get('productId');
-      return <Cart productId={productId} />;
+      return <Cart />;
+
     } else if (route.path === 'blog') {
 
       return <Blog />;

@@ -17,6 +17,8 @@ const app = express();
 
 app.use(staticMiddleware);
 
+app.use(express.json());
+
 app.get('/api/shoppingCatalog/Catalog/:productId', (req, res, next) => {
   const productId = Number(req.params.productId);
   if (!productId) {
@@ -56,6 +58,43 @@ app.get('/api/shoppingCatalog/Catalog', (req, res) => {
         error: 'An unexpected error occured.'
       });
     });
+});
+
+app.post('/api/shoppingCatalog/Cart', (req, res, next) => {
+  const userId = req.body.userId;
+
+  const sql = `
+    insert into "Cart" ("createdDate", "totalPrice", "userId")
+      values($1, $2, $3)
+      returning *`;
+  const params = [Date.now(), 0, userId];
+  db.query(sql, params)
+    .then(result => {
+      const [newCart] = result.rows;
+      res.status(201).json(newCart);
+    })
+    .catch(err => next(err));
+});
+
+app.post('/api/shoppingCatalog/CartItems', (req, res, next) => {
+  const price = req.body.price;
+  const productId = req.body.productId;
+  const cartId = req.body.cartId;
+  if (price === undefined || productId === undefined) {
+    throw new ClientError(400, 'productId is invalid.');
+  }
+  const sql = `
+    insert into "CartItems" ("price", "productId", "cartId")
+    values ($1, $2, $3)
+    returning *
+    `;
+  const params = [price, productId, cartId];
+  db.query(sql, params)
+    .then(result => {
+      const [newCartItem] = result.rows;
+      res.status(201).json(newCartItem);
+    })
+    .catch(err => next(err));
 });
 
 app.use(errorMiddleware);
