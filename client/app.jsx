@@ -3,7 +3,7 @@ import NavBar from './components/navbar';
 import Home from './pages/home';
 import Catalog from './pages/catalog';
 import ProductDetails from './catalog-components/product-details';
-import Cart from './components/cart';
+import Cart from './pages/cart';
 import Blog from './pages/blog';
 import NotFound from './pages/not-found';
 import BrandFooter from './components/brand-footer';

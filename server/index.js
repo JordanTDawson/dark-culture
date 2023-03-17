@@ -43,6 +43,23 @@ app.get('/api/shoppingCatalog/Catalog/:productId', (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.get('/api/shoppingCatalog/CartItems', (req, res) => {
+  const sql = `
+    select *
+      from "CartItems"`;
+  db.query(sql)
+    .then(result => {
+      const cartItems = result.rows;
+      res.json(cartItems);
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({
+        error: 'An unexpected error occured.'
+      });
+    });
+});
+
 app.get('/api/shoppingCatalog/Catalog', (req, res) => {
   const sql = `
     select *

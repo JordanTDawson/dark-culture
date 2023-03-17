@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import NotFound from '../pages/not-found';
 
 export default function ProductDetails({ productId }) {
 
@@ -23,7 +22,7 @@ export default function ProductDetails({ productId }) {
       .then(product => setProduct(product));
   }, [productId]);
 
-  if (!product) return <NotFound />;
+  if (!product) return null;
   return (
     <>
       <a href="#catalog" className="btn text-secondary">
