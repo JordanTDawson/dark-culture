@@ -24,7 +24,7 @@ export default function Products({ catalog }) {
             </Card>
           </a>
         </Col>
-      ))};
+      ))}
     </Row>
   );
 }
