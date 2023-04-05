@@ -11,9 +11,11 @@ export default function CartItems({ cart }) {
       .then(res => res.json())
       .then(cartItem => setCartItem(cartItem));
   }, [cart]);
+
   if (!cartItem) return <NotFound />;
+
   return (
-    <Card>
+    <Card className="mx-1 my-4" >
       <Card.Img variant="top" src={cartItem.itemImage} />
       <Card.Body>
         <Card.Title>{cartItem.itemName}</Card.Title>

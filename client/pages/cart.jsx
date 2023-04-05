@@ -12,11 +12,24 @@ export default function Cart() {
       .then(cart => setCart(cart));
   }, []);
 
+  const calculateTotal = () => {
+    let total = 0;
+    if (cart) {
+      for (let i = 0; i < cart.length; i++) {
+        total += cart[i].price;
+      }
+    }
+    return total.toFixed(2);
+  };
+
   return (
-    <Row xs={1} md={4} className="g-4">
-      { cart && cart.map(cartItem => (
-        <CartItems key={cartItem.productId} cart={cartItem.productId} />
-      ))}
-    </Row>
+    <>
+      <Row xs={1} md={4} className="g-4">
+        { cart && cart.map(cartItem => (
+          <CartItems key={cartItem.productId} cart={cartItem.productId} />
+        ))}
+      </Row>
+      <div>Total price: ${calculateTotal()}</div>
+    </>
   );
 }
