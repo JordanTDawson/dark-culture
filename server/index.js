@@ -114,6 +114,23 @@ app.post('/api/shoppingCatalog/CartItems', (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.delete('/api/shoppingCatalog/CartItems', (req, res) => {
+  const sql = `
+    truncate table "CartItems"
+  `;
+  db.query(sql)
+    .then(result => {
+      const cartItems = result.rows;
+      res.json(cartItems);
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({
+        error: 'An unexpected error occured.'
+      });
+    });
+});
+
 app.use(errorMiddleware);
 
 app.listen(process.env.PORT, () => {

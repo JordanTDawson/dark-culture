@@ -4,10 +4,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
 export default function NavBar() {
+
   return (
     <>
       {['lg'].map(expand => (
-        <Navbar key={expand} bg="dark" variant="dark" expand={expand}>
+        <Navbar key={expand} className="sticky-top" bg="dark" variant="dark" expand={expand}>
           <Container fluid>
             <Navbar.Brand className="justify-content-end" href="#home" >Smart Clothing</Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
