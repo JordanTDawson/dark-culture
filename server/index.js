@@ -114,6 +114,39 @@ app.post('/api/shoppingCatalog/CartItems', (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.delete('/api/shoppingCatalog/CartItems/:productId', (req, res) => {
+  const productId = Number(req.params.productId);
+  if (!Number.isInteger(productId) || productId <= 0) {
+    res.status(400).json({
+      error: '"productId" must be a positive integer'
+    });
+    return;
+  }
+  const sql = `
+    delete from "CartItems"
+    where "productId" = $1
+  `;
+  const params = [productId];
+  db.query(sql, params)
+    .then(result => {
+      if (result.rowCount === 0) {
+        res.status(404).json({
+          error: `Cannot find product with "productId" ${productId}`
+        });
+      } else {
+        res.status(204).json({
+          Succesful: `Deleted "productId" ${productId} from Cart`
+        });
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({
+        error: 'An unexpected error occured.'
+      });
+    });
+});
+
 app.delete('/api/shoppingCatalog/CartItems', (req, res) => {
   const sql = `
     truncate table "CartItems"
