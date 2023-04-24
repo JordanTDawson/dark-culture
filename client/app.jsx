@@ -22,7 +22,7 @@ export default function App() {
   }, []);
 
   function renderPage() {
-    if (route.path === 'home') {
+    if (route.path === '') {
 
       return <Home />;
 
@@ -43,8 +43,9 @@ export default function App() {
 
       return <Blog />;
 
+    } else {
+      return <NotFound />;
     }
-    return <NotFound />;
   }
 
   return (
