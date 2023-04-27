@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 export default function Cart() {
 
   const [cart, setCart] = useState([]);
+  const [, setTotalPrice] = useState(0);
 
   function handlePayNowClick() {
     deleteCartItems()
@@ -13,18 +14,28 @@ export default function Cart() {
       .catch(err => console.error(err));
   }
 
+  const updateTotalPrice = cart => {
+    if (!cart) {
+      return;
+    }
+    const totalPrice = cart.reduce((total, cartItem) => total + cartItem.price, 0).toFixed(2);
+    setTotalPrice(totalPrice);
+  };
+
   useEffect(() => {
-
-    fetchCartItems()
-      .then(cart => setCart(cart))
+    fetchCartItemsId()
+      .then(cart => {
+        setCart(cart);
+        setTotalPrice(calculateTotal(cart));
+      })
       .catch(err => console.error(err));
-  }, []);
+  });
 
-  const calculateTotal = () => {
+  const calculateTotal = cart => {
     return cart.reduce((total, cartItem) => total + cartItem.price, 0).toFixed(2);
   };
 
-  const fetchCartItems = async () => {
+  const fetchCartItemsId = async () => {
     const res = await fetch('/api/shoppingCatalog/CartItems');
     if (!res.ok) {
       throw new Error(`Failed to fetch cart items: ${res.status}`);
@@ -51,10 +62,10 @@ export default function Cart() {
           <div>
             <Row xs={1} md={4} className="g-4">
               {cart.map(cartItem => (
-                <CartItems key={cartItem.productId} productId={cartItem.productId} />
+                <CartItems key={cartItem.productId} productId={cartItem.productId} updateTotalPrice={updateTotalPrice} />
               ))}
             </Row>
-            <div>Total price: ${calculateTotal()}</div>
+            <div>Total price: ${calculateTotal(cart)}</div>
             <Button variant="primary" onClick={handlePayNowClick}>
               Pay Now
             </Button>
