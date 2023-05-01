@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 export default function Cart() {
 
   const [cart, setCart] = useState([]);
-  const [, setTotalPrice] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   function handlePayNowClick() {
     deleteCartItems()
@@ -26,14 +26,10 @@ export default function Cart() {
     fetchCartItemsId()
       .then(cart => {
         setCart(cart);
-        setTotalPrice(calculateTotal(cart));
+        updateTotalPrice(cart);
       })
       .catch(err => console.error(err));
-  });
-
-  const calculateTotal = cart => {
-    return cart.reduce((total, cartItem) => total + cartItem.price, 0).toFixed(2);
-  };
+  }, []);
 
   const fetchCartItemsId = async () => {
     const res = await fetch('/api/shoppingCatalog/CartItems');
@@ -57,7 +53,7 @@ export default function Cart() {
 
   return (
     <div>
-      {cart && cart.length > 0
+      {cart && cart.length > 0 && totalPrice > 0
         ? (
           <div>
             <Row xs={1} md={4} className="g-4">
@@ -65,7 +61,7 @@ export default function Cart() {
                 <CartItems key={cartItem.productId} productId={cartItem.productId} updateTotalPrice={updateTotalPrice} />
               ))}
             </Row>
-            <div>Total price: ${calculateTotal(cart)}</div>
+            <div>Total price: ${totalPrice}</div>
             <Button variant="primary" onClick={handlePayNowClick}>
               Pay Now
             </Button>
@@ -74,7 +70,7 @@ export default function Cart() {
         : (
           <div>
             <h1>There are no items here.</h1>
-            <a href="/">Return to catalog to get some awesome items in here.</a>
+            <a href="#catalog">Return to catalog to get some awesome items in here.</a>
           </div>
           )}
     </div>
