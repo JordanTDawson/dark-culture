@@ -1,0 +1,8 @@
+.hero-image {
+  position: relative;
+}
+
+.hero-image-text {
+  position: absolute;
+  bottom: 224px;
+}

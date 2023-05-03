@@ -3,10 +3,10 @@ import NavBar from './components/navbar';
 import Home from './pages/home';
 import Catalog from './pages/catalog';
 import ProductDetails from './catalog-components/product-details';
+import Cart from './pages/cart';
 import Blog from './pages/blog';
 import NotFound from './pages/not-found';
 import BrandFooter from './components/brand-footer';
-import Footer from './components/footer';
 import parseRoute from './lib/parse-route';
 
 export default function App() {
@@ -22,7 +22,7 @@ export default function App() {
   }, []);
 
   function renderPage() {
-    if (route.path === 'home') {
+    if (route.path === '') {
 
       return <Home />;
 
@@ -35,12 +35,17 @@ export default function App() {
       const productId = route.params.get('productId');
       return <ProductDetails productId={productId}/>;
 
+    } else if (route.path === 'cart') {
+
+      return <Cart />;
+
     } else if (route.path === 'blog') {
 
       return <Blog />;
 
+    } else {
+      return <NotFound />;
     }
-    return <NotFound />;
   }
 
   return (
@@ -48,7 +53,6 @@ export default function App() {
       <NavBar />
       { renderPage() }
       <BrandFooter />
-      <Footer />
     </>
   );
 }

@@ -1,49 +1,68 @@
-import React from 'react';
-import { Carousel } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Carousel, Container, Image } from 'react-bootstrap';
 
 export default function HomeCarousel() {
+  const [index, setIndex] = useState(0);
+
+  const handleIndex = selectedIndex => {
+    setIndex(selectedIndex);
+  };
+
   return (
-    <Carousel variant="dark">
+    <Carousel
+    style={{ height: 500 }}
+    activeIndex={index}
+    onSelect={handleIndex}
+    variant="dark">
       <Carousel.Item >
-        <div className="d-flex justify-content-center w-100 h-100" >
-          <img style={{ height: 500, width: 500 }}
-          className="d-block w-50"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrwt7KaCBLelo5n1Atee75T-BAV9JJ-Pb-Ow&usqp=CAU"
+        <Container
+        fluid
+        className="justify-content-center px-5 w-100" >
+          <Image
+          style={{ height: 500 }}
+          className="w-100"
+          fluid
+          src="/images/carousel-image-one.png"
           alt="First slide"
         />
-        </div>
+        </Container>
         <Carousel.Caption>
-          <h3>Check out our limited selection of dolls!</h3>
-          <p>We have a seasonal sale going on for Elf on the Shelf! Have him sit
-            anywhere in your home and keep the kids in check!</p>
+          <h3>Check out some of the deals on our brand of clothing!</h3>
+          <p>Many celebrities say that we created many styles.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <div className="d-flex justify-content-center w-100 h-100" >
-          <img style={{ height: 500, width: 500 }}
-          className="d-block w-100"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTItbPRaac0o9e67YxLI2JcAyDStTcFHR8o60VTytSzqo94br_-QNv51afFtP4EE3GO8wU&usqp=CAU"
+        <Container
+        fluid
+        className="justify-content-center px-5 w-100">
+          <Image
+          style={{ height: 500 }}
+          className="w-100"
+          fluid
+          src="/images/carousel-image-second.png"
           alt="Second slide"
-        />
-        </div>
-        <Carousel.Caption>
-          <h3>We have some pretty awesome deals on our clothes for Elf on the Shelf.</h3>
-          <p>Come check out all the different options of clothes that we hand made for your Elf on the Shelf.</p>
+          />
+        </Container>
+        <Carousel.Caption
+        className="text-light">
+          <h3>Our watches and suits are top sellers right now!</h3>
+          <p>Check out the catalog before they all get sold out!</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <div className="d-flex justify-conten-center w-100 h-100">
-          <img style={{ height: 500, width: 500 }}
-          className="d-block w-50"
-          src="holder.js/800x400?text=Third slide&bg=20232a"
+        <Container
+        fluid
+        className="justify-content-center px-5 w-100">
+          <Image style={{ height: 500 }}
+          className="w-100"
+          fluid
+          src="/images/carousel-image-third.png"
           alt="Third slide"
         />
-        </div>
-        <Carousel.Caption>
-          <h3>Please check out my business we have had zero revenue for weeks.</h3>
-          <p>
-            My parents said to find a niche to sell to but this was not the right niche.
-          </p>
+        </Container>
+        <Carousel.Caption className="text-light" >
+          <h3>All of our hand crafted materials are designed specifically for every piece of clothing!</h3>
+          <p>We pride ourselves on keeping our customers happy with the quality of material!</p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

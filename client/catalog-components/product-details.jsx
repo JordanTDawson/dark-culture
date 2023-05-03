@@ -1,9 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 export default function ProductDetails({ productId }) {
 
   const [product, setProduct] = useState();
+
+  function addToCart() {
+    fetch('/api/shoppingCatalog/CartItems', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ productId, price: product.price, cartId: 1 })
+    });
+  }
 
   useEffect(() => {
     fetch(`/api/shoppingCatalog/Catalog/${productId}`)
@@ -24,6 +35,7 @@ export default function ProductDetails({ productId }) {
           <Card.Text>${product.price.toFixed(2)}</Card.Text>
         </Card.Body>
       </Card>
+      <Button variant="secondary" onClick={addToCart}>Add Item to Cart</Button>
     </>
   );
 }
