@@ -24,9 +24,8 @@ export default function NavBar() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="flex-grow-1 pe-3">
-                  <Nav.Link href="/">Home</Nav.Link>
+                  <Nav.Link activeclassname="active" href="/">Home</Nav.Link>
                   <Nav.Link href="#catalog">Catalog</Nav.Link>
-                  <Nav.Link href="#blog">Blog</Nav.Link>
                   <Nav.Link activeclassname="active" href="#cart">Cart</Nav.Link>
                 </Nav>
               </Offcanvas.Body>
