@@ -6,3 +6,26 @@
   position: absolute;
   bottom: 224px;
 }
+
+.catalog-item {
+  transition: all 0.3s;
+}
+
+.catalog-item:hover {
+  transform: scale(1.01);
+  box-shadow: 5px 10px #888;
+}
+
+.three-column-image {
+  border: 1px solid;
+  transition: all 0.3s;
+}
+
+.three-column-image:hover {
+  transform: scale(1.01);
+  box-shadow: 5px 10px #888;
+}
+
+.custom-row {
+  margin: 0;
+}

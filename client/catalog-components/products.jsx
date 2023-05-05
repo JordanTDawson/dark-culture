@@ -15,7 +15,7 @@ export default function Products({ catalog }) {
       { catalog.map(product => (
         <Col key={product.productId}>
           <a className="text-decoration-none text-black" href={`#products?productId=${productId}`}>
-            <Card id={product.productId} onClick={handleClick}>
+            <Card className="catalog-item" id={product.productId} onClick={handleClick}>
               <Card.Img variant="top" src={product.itemImage} />
               <Card.Body>
                 <Card.Title>{product.itemName}</Card.Title>

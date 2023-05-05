@@ -10,20 +10,26 @@ export default function ThreeImageCol() {
       <Row xs={1} sm={2} md={3} className="text-center my-4">
         <Col>
           <a className="text-decoration-none text-black" href="#catalog">
-            <Image className="rounded" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTODucBZAM1Q6RT89Eny1tuAUkF_6Xa5OL4nQ&usqp=CAU" />
-            <h1>Men&apos;s Shirts</h1>
+            <div className="three-column-image">
+              <Image className="rounded" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTODucBZAM1Q6RT89Eny1tuAUkF_6Xa5OL4nQ&usqp=CAU" />
+              <h1>Men&apos;s Shirts</h1>
+            </div>
           </a>
         </Col>
         <Col>
           <a className="text-decoration-none text-black" href="#catalog">
-            <Image className="rounded" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaSEZYiL4voHUgvWmseyo1XIHlj_RjHPerki507aXPOBhf6iXis6VSggrOiUATt6Ym2Uc&usqp=CAU" />
-            <h1>Men&apos;s Pants</h1>
+            <div className="three-column-image">
+              <Image className="rounded" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaSEZYiL4voHUgvWmseyo1XIHlj_RjHPerki507aXPOBhf6iXis6VSggrOiUATt6Ym2Uc&usqp=CAU" />
+              <h1>Men&apos;s Pants</h1>
+            </div>
           </a>
         </Col>
         <Col>
           <a className="text-decoration-none text-black" href="#catalog" >
-            <Image className="rounded" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaSEZYiL4voHUgvWmseyo1XIHlj_RjHPerki507aXPOBhf6iXis6VSggrOiUATt6Ym2Uc&usqp=CAU" />
-            <h1>Men&apos;s Jackets</h1>
+            <div className="three-column-image">
+              <Image className="rounded" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaSEZYiL4voHUgvWmseyo1XIHlj_RjHPerki507aXPOBhf6iXis6VSggrOiUATt6Ym2Uc&usqp=CAU" />
+              <h1>Men&apos;s Jackets</h1>
+            </div>
           </a>
         </Col>
       </Row>
