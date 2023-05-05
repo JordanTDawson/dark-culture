@@ -54,7 +54,7 @@ export default function CartItems({ productId, updateTotalPrice }) {
       {cartItem && (
         <Card className="mx-1 my-4" >
           <Card.Img variant="top" src={cartItem.itemImage} />
-          <Card.Body>
+          <Card.Body className="text-center">
             <Card.Title>{cartItem.itemName}</Card.Title>
             <Card.Text>${cartItem.price.toFixed(2)}</Card.Text>
             <Button variant="danger" onClick={() => handleItemRemoval(cartItem.productId)}>Remove Item</Button>

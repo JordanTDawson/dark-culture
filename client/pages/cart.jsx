@@ -61,7 +61,7 @@ export default function Cart() {
                 <CartItems key={cartItem.productId} productId={cartItem.productId} updateTotalPrice={updateTotalPrice} />
               ))}
             </Row>
-            <div>Total price: ${totalPrice}</div>
+            <h1>Total price: ${totalPrice}</h1>
             <Button variant="primary" onClick={handlePayNowClick}>
               Pay Now
             </Button>
@@ -70,7 +70,7 @@ export default function Cart() {
         : (
           <div className="text-center my-5">
             <h1>There are no items here.</h1>
-            <Button variant="secondary" href="#catalog">Return to catalog to get some awesome items in here.</Button>
+            <Button variant="secondary" href="#catalog">Return to catalog to get some awesome items.</Button>
           </div>
           )}
     </div>
