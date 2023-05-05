@@ -47,7 +47,7 @@ export default function App() {
     <>
       <NavBar />
       { renderPage() }
-      <BrandFooter />
+      { route.path !== 'cart' && <BrandFooter /> }
     </>
   );
 }

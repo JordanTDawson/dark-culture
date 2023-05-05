@@ -68,7 +68,7 @@ export default function Cart() {
           </div>
           )
         : (
-          <div>
+          <div className="text-center my-5">
             <h1>There are no items here.</h1>
             <a href="#catalog">Return to catalog to get some awesome items in here.</a>
           </div>
