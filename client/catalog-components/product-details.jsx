@@ -30,7 +30,7 @@ export default function ProductDetails({ productId }) {
         &lt; Back to Catalog
       </Button>
       <Container className="d-flex justify-content-center">
-        <Card className=" text-center w-25">
+        <Card className="text-center w-25">
           <Card.Img src={product.itemImage} />
           <Card.Body>
             <Card.Title>{product.itemName}</Card.Title>
