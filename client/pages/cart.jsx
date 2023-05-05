@@ -68,9 +68,11 @@ export default function Cart() {
           </div>
           )
         : (
-          <div className="text-center my-5">
-            <h1>There are no items here.</h1>
-            <Button variant="secondary" href="#catalog">Return to catalog to get some awesome items.</Button>
+          <div className="message-content">
+            <div className="text-center my-5">
+              <h1>There are no items here.</h1>
+              <Button variant="secondary" href="#catalog">Return to catalog to get some awesome items.</Button>
+            </div>
           </div>
           )}
     </div>

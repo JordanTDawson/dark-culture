@@ -25,3 +25,10 @@
   transform: scale(1.01);
   box-shadow: 5px 10px #888;
 }
+
+.message-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 3.5rem);
+}
