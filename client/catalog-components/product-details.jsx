@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
 
 export default function ProductDetails({ productId }) {
 
@@ -25,17 +26,21 @@ export default function ProductDetails({ productId }) {
   if (!product) return null;
   return (
     <>
-      <a href="#catalog" className="btn text-secondary">
+      <Button href="#catalog" variant="secondary">
         &lt; Back to Catalog
-      </a>
-      <Card>
-        <Card.Img variant="top" src={product.itemImage} />
-        <Card.Body>
-          <Card.Title>{product.itemName}</Card.Title>
-          <Card.Text>${product.price.toFixed(2)}</Card.Text>
-        </Card.Body>
-      </Card>
-      <Button variant="secondary" onClick={addToCart}>Add Item to Cart</Button>
+      </Button>
+      <Container className="d-flex justify-content-center">
+        <Card className=" text-center w-25">
+          <Card.Img src={product.itemImage} />
+          <Card.Body>
+            <Card.Title>{product.itemName}</Card.Title>
+            <Card.Text>${product.price.toFixed(2)}</Card.Text>
+          </Card.Body>
+        </Card>
+      </Container>
+      <Container className="text-center py-2" >
+        <Button variant="secondary" onClick={addToCart}>Add Item to Cart</Button>
+      </Container>
     </>
   );
 }
