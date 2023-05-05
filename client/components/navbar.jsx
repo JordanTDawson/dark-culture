@@ -10,7 +10,7 @@ export default function NavBar() {
       {['lg'].map(expand => (
         <Navbar key={expand} className="sticky-top" bg="dark" variant="dark" expand={expand}>
           <Container fluid>
-            <Navbar.Brand className="justify-content-end" href="#home" >Smart Clothing</Navbar.Brand>
+            <Navbar.Brand className="justify-content-end" href="/" >Smart Clothing</Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
