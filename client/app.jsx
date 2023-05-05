@@ -23,31 +23,31 @@ export default function App() {
   function renderPage() {
     if (route.path === '') {
 
-      return <Home />;
+      return { component: <Home />, showFooter: true };
 
     } else if (route.path === 'catalog') {
 
-      return <Catalog />;
+      return { component: <Catalog />, showFooter: true };
 
     } else if (route.path === 'products') {
 
       const productId = route.params.get('productId');
-      return <ProductDetails productId={productId}/>;
+      return { component: <ProductDetails productId={productId} />, showFooter: false };
 
     } else if (route.path === 'cart') {
 
-      return <Cart />;
+      return { component: <Cart />, showFooter: false };
 
     } else {
-      return <NotFound />;
+      return { component: <NotFound />, showFooter: false };
     }
   }
 
   return (
     <>
       <NavBar />
-      { renderPage() }
-      { route.path !== 'cart' && <BrandFooter /> }
+      { renderPage().component }
+      { renderPage().showFooter && <BrandFooter /> }
     </>
   );
 }
