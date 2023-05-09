@@ -6,6 +6,7 @@ import Container from 'react-bootstrap/Container';
 export default function ProductDetails({ productId }) {
 
   const [product, setProduct] = useState();
+  const [addedToCart, setAddedToCart] = useState(false);
 
   function addToCart() {
     fetch('/api/shoppingCatalog/CartItems', {
@@ -14,7 +15,12 @@ export default function ProductDetails({ productId }) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ productId, price: product.price, cartId: 1 })
-    });
+    })
+      .then(response => {
+        if (response.ok) {
+          setAddedToCart(true);
+        }
+      });
   }
 
   useEffect(() => {
@@ -39,7 +45,15 @@ export default function ProductDetails({ productId }) {
         </Card>
       </Container>
       <Container className="text-center py-2" >
-        <Button variant="secondary" onClick={addToCart}>Add Item to Cart</Button>
+        {addedToCart
+          ? (
+            <Button variant="secondary" disabled >
+              Added to Cart
+            </Button>
+            )
+          : (
+            <Button variant="secondary" onClick={addToCart}>Add Item to Cart</Button>
+            )}
       </Container>
     </>
   );
