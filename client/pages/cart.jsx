@@ -56,7 +56,7 @@ export default function Cart() {
       {cart && cart.length > 0 && totalPrice > 0
         ? (
           <div>
-            <Row xs={1} md={4} className="g-4">
+            <Row xs={1} sm={2} md={4} className="g-4">
               {cart.map(cartItem => (
                 <CartItems key={cartItem.productId} productId={cartItem.productId} updateTotalPrice={updateTotalPrice} />
               ))}
