@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 export default function BrandFooter() {
   return (
-    <Navbar className="sticky-bottom" bg="light" variant="light">
+    <Navbar bg="light" variant="light">
       <Container className="justify-content-center">
         <Navbar.Brand>SUPREME</Navbar.Brand>
         <Navbar.Brand>SHEIN</Navbar.Brand>
