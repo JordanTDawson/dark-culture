@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
 export default function NavBar() {
-
   return (
     <>
       {['lg'].map(expand => (
@@ -24,9 +23,9 @@ export default function NavBar() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="flex-grow-1 pe-3">
-                  <Nav.Link activeclassname="active" href="/">Home</Nav.Link>
+                  <Nav.Link href="/">Home</Nav.Link>
                   <Nav.Link href="#catalog">Catalog</Nav.Link>
-                  <Nav.Link activeclassname="active" href="#cart">Cart</Nav.Link>
+                  <Nav.Link href="#cart">Cart</Nav.Link>
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>

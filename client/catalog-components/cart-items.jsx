@@ -52,7 +52,7 @@ export default function CartItems({ productId, updateTotalPrice }) {
     <div>
       {message && <Message text={message} />}
       {cartItem && (
-        <Card className="mx-1 my-4" >
+        <Card className="catalog-item mx-1 my-4" >
           <Card.Img variant="top" src={cartItem.itemImage} />
           <Card.Body className="text-center">
             <Card.Title>{cartItem.itemName}</Card.Title>
