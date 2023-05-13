@@ -36,6 +36,7 @@ export default function ProductDetails({ productId }) {
       .then(res => res.json())
       .then(product => setProduct(product));
   }, [productId]);
+
   if (error) {
     return (
       <div className="message-content">

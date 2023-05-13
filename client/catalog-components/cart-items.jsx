@@ -53,7 +53,7 @@ export default function CartItems({ productId, updateTotalPrice }) {
       {message && <Message text={message} />}
       {cartItem && (
         <Card className="catalog-item mx-1 my-4" >
-          <Card.Img variant="top" src={cartItem.itemImage} />
+          <Card.Img alt={cartItem.itemName} variant="top" src={cartItem.itemImage} />
           <Card.Body className="text-center">
             <Card.Title>{cartItem.itemName}</Card.Title>
             <Card.Text>${cartItem.price.toFixed(2)}</Card.Text>

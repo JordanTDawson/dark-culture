@@ -11,6 +11,11 @@
   transition: all 0.3s;
 }
 
+.catalog-image {
+  width: auto;
+  height: 400px;
+}
+
 .catalog-item:hover {
   transform: scale(1.01);
   box-shadow: 5px 10px #888;
@@ -19,6 +24,11 @@
 .three-column-image {
   border: 1px solid;
   transition: all 0.3s;
+}
+
+.three-column-image img {
+  width: auto;
+  height: 250px;
 }
 
 .three-column-image:hover {
