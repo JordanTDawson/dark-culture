@@ -43,6 +43,12 @@
   min-height: calc(100vh - 3.5rem);
 }
 
+.card-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .lds-ring {
   display: inline-block;
   position: relative;

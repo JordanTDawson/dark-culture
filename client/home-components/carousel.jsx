@@ -37,7 +37,7 @@ export default function HomeCarousel() {
           />
           <Carousel.Caption
           className="text-light">
-            <h3>Our watches and suits are top sellers right now!</h3>
+            <h3>Competitors wish they had our selection of clothing!</h3>
             <p>Check out the catalog before they all get sold out!</p>
           </Carousel.Caption>
         </Carousel.Item>
