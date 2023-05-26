@@ -6,8 +6,6 @@ import Container from 'react-bootstrap/Container';
 
 export default function ProductDetails({ productId }) {
 
-  console.log('typeof productId', typeof productId)
-
   const [product, setProduct] = useState();
   const [addedToCart, setAddedToCart] = useState(false);
   const [error, setError] = useState('');
@@ -43,10 +41,7 @@ export default function ProductDetails({ productId }) {
     fetch(`/api/shoppingCatalog/CartItems`)
       .then(res => res.json())
       .then(cartItems => {
-        console.log('cartItems variable', cartItems);
-        console.log(typeof productId);
         const addedToCart = cartItems.some(item => item.productId === productId)
-        console.log('after added to cart const', addedToCart);
         setAddedToCart(addedToCart);
         })
       .catch(err => console.error(err));

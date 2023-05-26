@@ -6,8 +6,6 @@ import Row from 'react-bootstrap/Row';
 export default function Products({ catalog }) {
   const [productId, setProductId] = useState(null);
 
-  console.log(catalog[0].productId);
-
   function handleClick(event) {
     setProductId(Number(event.currentTarget.id));
   }
