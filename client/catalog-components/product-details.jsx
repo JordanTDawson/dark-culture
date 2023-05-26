@@ -6,11 +6,17 @@ import Container from 'react-bootstrap/Container';
 
 export default function ProductDetails({ productId }) {
 
+  console.log('typeof productId', typeof productId)
+
   const [product, setProduct] = useState();
   const [addedToCart, setAddedToCart] = useState(false);
   const [error, setError] = useState('');
+  const [buttonClicked, setButtonClicked] = useState(false);
 
   function addToCart() {
+    if (addedToCart) {
+      setError('Already in Cart!');
+    } else {
     fetch('/api/shoppingCatalog/CartItems', {
       method: 'POST',
       headers: {
@@ -29,7 +35,22 @@ export default function ProductDetails({ productId }) {
       .catch(() => {
         setError('Failed to add item to Cart');
       });
+    }
+    setButtonClicked(true);
   }
+
+  useEffect(() => {
+    fetch(`/api/shoppingCatalog/CartItems`)
+      .then(res => res.json())
+      .then(cartItems => {
+        console.log('cartItems variable', cartItems);
+        console.log(typeof productId);
+        const addedToCart = cartItems.some(item => item.productId === productId)
+        console.log('after added to cart const', addedToCart);
+        setAddedToCart(addedToCart);
+        })
+      .catch(err => console.error(err));
+  }, [productId]);
 
   useEffect(() => {
     fetch(`/api/shoppingCatalog/Catalog/${productId}`)
@@ -37,7 +58,7 @@ export default function ProductDetails({ productId }) {
       .then(product => setProduct(product));
   }, [productId]);
 
-  if (error) {
+  if (error && buttonClicked) {
     return (
       <div className="message-content">
         <div className="text-center my-5">
@@ -64,13 +85,11 @@ export default function ProductDetails({ productId }) {
           </Card>
         </Container>
         <Container className="text-center py-2" >
-          {addedToCart
-            ? (
+          {addedToCart ? (
               <Button variant="secondary" disabled >
                 Added to Cart
               </Button>
-              )
-            : (
+              ) : (
               <Button variant="secondary" onClick={addToCart}>Add Item to Cart</Button>
               )}
         </Container>

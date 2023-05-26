@@ -6,6 +6,8 @@ import Row from 'react-bootstrap/Row';
 export default function Products({ catalog }) {
   const [productId, setProductId] = useState(null);
 
+  console.log(catalog[0].productId);
+
   function handleClick(event) {
     setProductId(Number(event.currentTarget.id));
   }
@@ -16,7 +18,7 @@ export default function Products({ catalog }) {
         <Col key={product.productId}>
           <a className="text-decoration-none text-black" href={`#products?productId=${productId}`}>
             <Card className="catalog-item" id={product.productId} onClick={handleClick}>
-              <Card.Img className="catalog-image" alt={product.itemName} variant="top" src={product.itemImage} />
+              <Card.Img className="catalog-image" style={{ objectFit: 'contain'}} alt={product.itemName} variant="top" src={product.itemImage} />
               <Card.Body>
                 <Card.Title className="card-title" >{product.itemName}</Card.Title>
                 <Card.Text>${product.price.toFixed(2)}</Card.Text>
