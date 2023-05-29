@@ -24,8 +24,8 @@ export default function HomeCarousel() {
           alt="First slide"
         />
           <Carousel.Caption>
-            <h3>Check out some of the deals on our brand of clothing!</h3>
-            <p>Many celebrities say that we created many styles.</p>
+            <h3 className="title-font">Check out some of the deals on our brand of clothing!</h3>
+            <p className="body-font">Many celebrities say that we created many styles.</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -37,8 +37,8 @@ export default function HomeCarousel() {
           />
           <Carousel.Caption
           className="text-light">
-            <h3>Competitors wish they had our selection of clothing!</h3>
-            <p>Check out the catalog before they all get sold out!</p>
+            <h3 className="title-font">Competitors wish they had our selection of clothing!</h3>
+            <p className="body-font">Check out the catalog before they all get sold out!</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -48,8 +48,8 @@ export default function HomeCarousel() {
           alt="Third slide"
         />
           <Carousel.Caption className="text-light" >
-            <h3>All of our hand crafted materials are designed specifically for every piece of clothing!</h3>
-            <p>We pride ourselves on keeping our customers happy with the quality of material!</p>
+            <h3 className="title-font">All of our hand crafted materials are designed specifically for every piece of clothing!</h3>
+            <p className="body-font">We pride ourselves on keeping our customers happy with the quality of material!</p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

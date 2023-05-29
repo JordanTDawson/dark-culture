@@ -18,8 +18,8 @@ export default function Products({ catalog }) {
             <Card className="catalog-item" id={product.productId} onClick={handleClick}>
               <Card.Img className="catalog-image" style={{ objectFit: 'contain'}} alt={product.itemName} variant="top" src={product.itemImage} />
               <Card.Body>
-                <Card.Title className="card-title" >{product.itemName}</Card.Title>
-                <Card.Text>${product.price.toFixed(2)}</Card.Text>
+                <Card.Title className="card-title title-font" >{product.itemName}</Card.Title>
+                <Card.Text className="body-font" >${product.price.toFixed(2)}</Card.Text>
               </Card.Body>
             </Card>
           </a>

@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Message from './cart-message';
+import Loading from '../components/loader';
 
 export default function CartItems({ productId, updateTotalPrice }) {
 
   const [cartItem, setCartItem] = useState();
   const [message, setMessage] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   function handleItemRemoval(productId) {
     fetch(`/api/shoppingCatalog/CartItems/${productId}`, {
@@ -44,10 +46,16 @@ export default function CartItems({ productId, updateTotalPrice }) {
         }
         return res.json();
       })
-      .then(cartItem => setCartItem(cartItem))
+      .then(cartItem => {
+        setCartItem(cartItem)
+        setIsLoading(false);
+      })
       .catch(err => console.error(err));
   }, [productId]);
 
+  if (isLoading) {
+    <Loading />
+  } 
   return (
     <div>
       {message && <Message text={message} />}

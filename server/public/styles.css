@@ -11,11 +11,20 @@ h6 {
   font-family: "DM Serif Display", serif;
 }
 
+.title-font {
+  font-family: "DM Serif Display", serif;
+}
+
+.body-font {
+  font-family: "DM Sans", sans-serif;
+}
+
 .hero-image {
   position: relative;
 }
 
 .hero-image-text {
+  font-size: 30px;
   position: absolute;
   bottom: 224px;
 }

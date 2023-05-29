@@ -3,13 +3,14 @@ import NotFound from '../pages/not-found';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
+import Loading from '../components/loader';
 
 export default function ProductDetails({ productId }) {
 
   const [product, setProduct] = useState();
   const [addedToCart, setAddedToCart] = useState(false);
   const [error, setError] = useState('');
-  const [buttonClicked, setButtonClicked] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   function addToCart() {
     if (addedToCart) {
@@ -34,7 +35,6 @@ export default function ProductDetails({ productId }) {
         setError('Failed to add item to Cart');
       });
     }
-    setButtonClicked(true);
   }
 
   useEffect(() => {
@@ -50,10 +50,13 @@ export default function ProductDetails({ productId }) {
   useEffect(() => {
     fetch(`/api/shoppingCatalog/Catalog/${productId}`)
       .then(res => res.json())
-      .then(product => setProduct(product));
+      .then(product => {
+        setProduct(product);
+        setIsLoading(false);
+      });
   }, [productId]);
 
-  if (error && buttonClicked) {
+  if (error) {
     return (
       <div className="message-content">
         <div className="text-center my-5">
@@ -62,30 +65,34 @@ export default function ProductDetails({ productId }) {
         </div>
       </div>
     );
+  } else if (isLoading) {
+    <Loading />
   } else if (!product) {
     return <NotFound />;
   } else {
     return (
       <>
         <Button href="#catalog" variant="secondary">
-          &lt; Back to Catalog
+          <div className="body-font"> &lt; Back to Catalog </div>
         </Button>
         <Container className="d-flex justify-content-center">
           <Card className="text-center w-25">
             <Card.Img src={product.itemImage} />
             <Card.Body>
-              <Card.Title>{product.itemName}</Card.Title>
-              <Card.Text>${product.price.toFixed(2)}</Card.Text>
+              <Card.Title className="title-font">{product.itemName}</Card.Title>
+              <Card.Text className="body-font">${product.price.toFixed(2)}</Card.Text>
             </Card.Body>
           </Card>
         </Container>
         <Container className="text-center py-2" >
           {addedToCart ? (
-              <Button variant="secondary" disabled >
-                Added to Cart
+              <Button className="body-font" variant="secondary" disabled >
+                <div className="title-font" >Added to Cart</div>
               </Button>
               ) : (
-              <Button variant="secondary" onClick={addToCart}>Add Item to Cart</Button>
+              <Button variant="secondary" onClick={addToCart}>
+                <div className="body-font" >Add Item to Cart</div>
+              </Button>
               )}
         </Container>
       </>
