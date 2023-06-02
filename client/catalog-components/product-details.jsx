@@ -78,7 +78,7 @@ export default function ProductDetails({ productId }) {
         <Container className="d-flex justify-content-center">
           <Card className="text-center w-25">
             <Card.Img src={product.itemImage} />
-            <Card.Body>
+            <Card.Body className="text-center">
               <Card.Title className="title-font">{product.itemName}</Card.Title>
               <Card.Text className="body-font">${product.price.toFixed(2)}</Card.Text>
             </Card.Body>

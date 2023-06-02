@@ -9,7 +9,7 @@ export default function HomeCarousel() {
   };
 
   return (
-    <Container className="justify-content-center w-75" fluid>
+    <Container className="justify-content-center w-75 mb-5" fluid>
       <Carousel
       style={{ height: 500 }}
       className="w-100"

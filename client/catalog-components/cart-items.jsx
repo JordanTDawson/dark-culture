@@ -8,7 +8,6 @@ export default function CartItems({ productId, updateTotalPrice }) {
 
   const [cartItem, setCartItem] = useState();
   const [message, setMessage] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
 
   function handleItemRemoval(productId) {
     fetch(`/api/shoppingCatalog/CartItems/${productId}`, {
@@ -20,12 +19,11 @@ export default function CartItems({ productId, updateTotalPrice }) {
           fetch('/api/shoppingCatalog/CartItems')
             .then(res => res.json())
             .then(cart => {
-              setCartItem(null);
               updateTotalPrice(cart);
               setMessage('Item removed successfully.');
               setTimeout(() => {
                 setMessage(null);
-              }, 2000);
+              }, 1000);
             })
             .catch(err => console.error(err));
         } else {
@@ -35,7 +33,7 @@ export default function CartItems({ productId, updateTotalPrice }) {
       .catch(err => {
         console.error(err);
         setMessage('Failed to delete item.');
-      });
+      })
   }
 
   useEffect(() => {
@@ -48,14 +46,10 @@ export default function CartItems({ productId, updateTotalPrice }) {
       })
       .then(cartItem => {
         setCartItem(cartItem)
-        setIsLoading(false);
       })
       .catch(err => console.error(err));
   }, [productId]);
 
-  if (isLoading) {
-    <Loading />
-  } 
   return (
     <div>
       {message && <Message text={message} />}
@@ -63,9 +57,11 @@ export default function CartItems({ productId, updateTotalPrice }) {
         <Card className="catalog-item mx-1 my-4" >
           <Card.Img className="catalog-image" alt={cartItem.itemName} variant="top" src={cartItem.itemImage} />
           <Card.Body className="text-center">
-            <Card.Title>{cartItem.itemName}</Card.Title>
-            <Card.Text>${cartItem.price.toFixed(2)}</Card.Text>
-            <Button variant="danger" onClick={() => handleItemRemoval(cartItem.productId)}>Remove Item</Button>
+            <Card.Title className="title-font" >{cartItem.itemName}</Card.Title>
+            <Card.Text className="body-font" >${cartItem.price.toFixed(2)}</Card.Text>
+            <Button variant="danger" onClick={() => handleItemRemoval(cartItem.productId)}>
+              <div className="body-font">Remove Item</div>
+            </Button>
           </Card.Body>
         </Card>
       )}
