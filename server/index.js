@@ -3,7 +3,7 @@ const pg = require('pg');
 const types = require('pg').types;
 types.setTypeParser(1700, 'text', parseFloat);
 const db = new pg.Pool({
-  connectionString: 'postgres://dev:dev@localhost/shoppingCatalog',
+  connectionString: process.env.DATABASE_URL,
   ssl: {
     rejectUnauthorized: false
   }
