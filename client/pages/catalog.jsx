@@ -10,7 +10,9 @@ export default function Catalog() {
       .then(res => res.json())
       .then(catalog => setCatalog(catalog));
   }, []);
+
   if (!catalog) return null;
+  
   return (
     <Products catalog={catalog} />
   );

@@ -1,65 +1,116 @@
 insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
-values('doll', 'California Elf on the Shelf', 'https://cdn.shopify.com/s/files/1/0910/1062/products/CCHOODIESHV_LifestyleSilo_WhiteBlock_600x.jpg?v=1654852069', 20.00, 1);
+values('boots', 'Leather Lace Up Doc Martens', 'https://cdn.media.amplience.net/i/drmartens/11822006.80?$smart640$&fmt=auto', 170.00, 1);
 
 insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
-values('doll', 'Christmas Jammies Elf', 'https://cdn.shopify.com/s/files/1/0910/1062/products/CCONESIEPJ_LifestyleSilo_Block_LtBoy_600x.jpg?v=1661720336', 25.00, 2);
+values('boots', 'Greasy Leather Lace Up Boots', 'https://cdn.media.amplience.net/i/drmartens/11822003.80?$smart640$&fmt=auto', 170.00, 2);
 
 insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
-values('doll', 'More Christmas Jammies Elf', 'https://cdn.shopify.com/s/files/1/0910/1062/products/CCCOOKIEPJ_LifestyleSilo_Action_600x.jpg?v=1654852143', 15.00, 3);
+values('boots', 'Crazy Horse Leather Casual Boots', 'https://cdn.media.amplience.net/i/drmartens/26006207.80?$smart640$&fmt=auto', 130.00, 3);
 
 insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
-values('doll', 'The Ladies Man', 'https://cdn.shopify.com/s/files/1/0910/1062/products/CCROBE_ProductSilo_Flat_grande.jpg?v=1661720172', 50.00, 4);
+values('jeans', 'Black & Grey Split Leg Skinny Jeans', 'https://cdn.media.amplience.net/s/hottopic/17250627_hi?$productMainDesktop$', 39.90, 4);
 
 insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
-values('doll', 'Hype Beast', 'https://cdn.shopify.com/s/files/1/0910/1062/products/Screenshot2022-08-28at21.43.04_600x.jpg?v=1661719448', 100.00, 5);
+values('shirt', 'IT PennyWise Water T-Shirt', 'https://cdn.media.amplience.net/s/hottopic/20530058_hi?$productMainDesktop$', 25.90, 5);
 
 insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
-values('doll', 'Knock Off SuperMan', 'https://cdn.shopify.com/s/files/1/0910/1062/products/CCMTYHERO_Lifestyle_CityJump_600x.jpg?v=1661719888', 10.00, 6);
+values('shirt', 'Metallica Black Album Art T-Shirt', 'https://cdn.media.amplience.net/s/hottopic/11222703_hi?$productMainDesktop$', 25.90, 6);
 
 insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
-values('doll', 'Bruce Lee Elf', 'https://cdn.shopify.com/s/files/1/0910/1062/products/CCKARATE_Lifestyle_XmasTree_DkBoy_600x.jpg?v=1662732134', 30.00, 7);
+values('shirt', 'Rob Zombie Dragula T-Shirt', 'https://cdn.media.amplience.net/s/hottopic/15806419_hi?$productMainDesktop$', 24.90, 7);
 
 insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
-values('doll', 'GingerBread Elf', 'https://cdn.shopify.com/s/files/1/0910/1062/products/CCJOLLY2_ProductLifestyle_ElfGingerbreadhouse_600x.jpg?v=1617895232', 25.00, 8);
+values('shirt', 'Chucky Album Cover T-Shirt', 'https://cdn.media.amplience.net/s/hottopic/20529957_hi?$productMainDesktop$', 27.90, 8);
 
 insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
-values('doll', 'Cocoa to Go Elf', 'https://cdn.shopify.com/s/files/1/0910/1062/products/CCBARISTA_LifestyleSilo_LtBoy_600x.jpg?v=1661719099', 25.00, 9);
+values('shirt', 'Led Zepplin 1977 T-Shirt', 'https://cdn.media.amplience.net/s/hottopic/905227_hi?$productMainDesktop$', 27.90, 9);
 
 insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
-values('doll', 'Drippy Hipster', 'https://cdn.shopify.com/s/files/1/0910/1062/products/CCHIPSTER_LifestyleSilo_LtBoy_600x.jpg?v=1654852314', 100.00, 10);
+values('shirt', 'Halloween Michael Myers Trick T-Shirt', 'https://cdn.media.amplience.net/s/hottopic/19593003_hi?$productMainTablet$', 23.90, 10);
 
 insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
-values('doll', 'Tutu Elf', 'https://cdn.shopify.com/s/files/1/0910/1062/products/CCHOLLYDAYS_LifestyleSilo_Action_Ltgirl_600x.jpg?v=1654851991', 20.00, 11);
+values('shirt', "The Cure Boys Don't Cry T-Shirt", 'https://cdn.media.amplience.net/s/hottopic/10694451_hi', 22.32, 11);
 
 insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
-values('doll', 'Felt cute might Delete', 'https://cdn.shopify.com/s/files/1/0910/1062/products/snowflake-skirt-2-contents-silo_grande.png?v=1654852085', 1.00, 12);
+values('shirt', 'Korn Still A Freak T-Shirt', 'https://cdn.media.amplience.net/s/hottopic/11452578_hi?$productMainTablet$', 22.32, 12);
 
 insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
-values('doll', 'Also felt cute', 'https://cdn.shopify.com/s/files/1/0910/1062/products/CCPEPDRESS_LifestyleSilo_DkGirl_600x.jpg?v=1661720411', 2.00, 13);
+values('shirt', 'KISS Band Photo T-Shirt', 'https://cdn.media.amplience.net/s/hottopic/20540274_hi?$productMainTablet$', 27.90, 13);
 
 insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
-values('doll', 'Styling on you', 'https://cdn.shopify.com/s/files/1/0910/1062/products/CCCOOKGOWN_LifestyleSilo_Action_600x.jpg?v=1654852143', 20.00, 14);
+values('shirt', "Gunz N' Roses T-Shirt", 'https://cdn.media.amplience.net/s/hottopic/15938855_hi?$productMainTablet$', 26.90, 14);
 
 insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
-values('doll', 'Feeling Like a Princess', 'https://cdn.shopify.com/s/files/1/0910/1062/products/CCPINKSPKL_LifestyleSilo_DkGirl_600x.jpg?v=1661720217', 25.00, 15);
+values('shirt', 'Gorillaz Geep T-Shirt', 'https://cdn.media.amplience.net/s/hottopic/15346399_hi?$productMainTablet$', 26.90, 15);
 
 insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
-values('doll', 'Rainbow Fairy', 'https://cdn.shopify.com/s/files/1/0910/1062/products/CCFAIRY_ProductSilo_Flat_grande.jpg?v=1661720370', 35.00, 16);
+values('shirt', 'Pink Floyd Prism T-Shirt', 'https://cdn.media.amplience.net/s/hottopic/938525_hi?$productMainTablet$', 25.90, 16);
 
 insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
-values('doll', 'Ballerina Elf', 'https://cdn.shopify.com/s/files/1/0910/1062/products/CCBALLERINA_ProductSilo_FlatSilo_Front_grande.jpg?v=1654852315', 45.00, 17);
+values('shirt', "The Rolling Stones '89 Tongue T-Shirt", 'https://cdn.media.amplience.net/s/hottopic/10012058_hi?$productMainTablet$', 45.00, 17);
 
 insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
-values('doll', 'Three Musketeers', 'https://cdn.shopify.com/s/files/1/0910/1062/products/Sweet_Tees_600x.png?v=1617895248', 150.00, 18);
+values('shirt', 'Sublime Sun Bleach T-Shirt', 'https://cdn.media.amplience.net/s/hottopic/15411120_hi?$productMainTablet$', 28.90, 18);
 
 insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
-values('doll', 'Certified Drip', 'https://cdn.shopify.com/s/files/1/0910/1062/products/CCTELFP_PackagingSilo_Front_600x.jpg?v=1654852117', 300.00, 19);
+values('shirt', 'Linkin Park Hybrid Theory T-Shirt', 'https://cdn.media.amplience.net/s/hottopic/11636433_hi?$productMainTablet$', 25.90, 19);
 
 insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
-values('doll', 'Dog and Deer idk', 'https://cdn.shopify.com/s/files/1/0910/1062/products/CCEPPARTY_LifestyleSilo_SB_RD_600x.jpg?v=1661719511', 200.00, 20);
+values('jeans', 'Black Chain and Strap Stinger Jeans', 'https://cdn.media.amplience.net/s/hottopic/17891087_hi?$productMainTablet$', 49.90, 20);
 
 insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
-values('doll', 'Elf on A Sled', 'https://cdn.shopify.com/s/files/1/0910/1062/products/cc-sled-set-1-elf_600x.jpg?v=1654852082', 250.00, 21);
+values('jeans', 'Black Denim Wide Leg Pants w/ Grommet Belts', 'https://cdn.media.amplience.net/s/hottopic/17494756_hi?$productMainTablet$', 54.90, 21);
+
+insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
+values('jeans', 'Death Forever Vintage Cargo Shorts', 'https://cdn.media.amplience.net/s/hottopic/20657402_hi?$productMainTablet$', 50.90, 22);
+
+insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
+values('shirt', 'Metallica The Shortest Straw Tie-Die T-Shirt', 'https://cdn.media.amplience.net/s/hottopic/11890629_hi?$productMainTablet$', 30.90, 23);
+
+insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
+values('shirt', 'Scream Ghost Face Mask T-Shirt', 'https://cdn.media.amplience.net/s/hottopic/20283586_hi?$productMainTablet$', 27.90, 24);
+
+insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
+values('shirt', "Child's Play Chucky Wanna Play T-Shirt", 'https://cdn.media.amplience.net/s/hottopic/20127693_hi?$productMainTablet$', 27.90, 25);
+
+insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
+values('shirt', 'Friday the 13th Jason Mask Jumbo Print T-Shirt', 'https://cdn.media.amplience.net/s/hottopic/20529454_hi?$productMainTablet$', 32.90, 26);
+
+insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
+values('shirt', 'Korn Follow the Leader Walkman T-Shirt', 'https://cdn.media.amplience.net/s/hottopic/16044131_hi?$productMainTablet$', 26.90, 27);
+
+insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
+values('shorts', 'Halloween Panel Dark Wash Lounge Shorts', 'https://cdn.media.amplience.net/s/hottopic/20104161_hi?$productMainTablet$', 34.90, 28);
+
+insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
+values('shirt', 'Nirvana Smile T-Shirt', 'https://cdn.media.amplience.net/s/hottopic/10497129_hi?$productMainTablet$', 27.90, 29);
+
+insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
+values('jeans', 'Black Denim Skinny Jeans', 'https://cdn.media.amplience.net/s/hottopic/18074574_hi?$productMainTablet$', 39.90, 30);
+
+insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
+values('shorts', 'Bone Rips Vintage Cargo Shorts', 'https://cdn.media.amplience.net/s/hottopic/16698025_hi?$productMainTablet$', 55.90, 31);
+
+insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
+values('shirt', 'Gorillaz Group Tie-Dye T-Shirt', 'https://cdn.media.amplience.net/s/hottopic/14562615_hi?$productMainTablet$', 29.90, 32);
+
+insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
+values('shirt', 'Texas Chainsaw Massacre Tarot Card T-Shirt', 'https://cdn.media.amplience.net/s/hottopic/17539209_hi?$productMainTablet$', 24.90, 33);
+
+insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
+values('shirt', 'Iron Maiden The Trooper T-Shirt', 'https://cdn.media.amplience.net/s/hottopic/10130556_hi?$productMainTablet$', 25.90, 34);
+
+insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
+values('boots', 'Uncaged Combat Boots [Bolt-256]', 'https://cdn.shopify.com/s/files/1/2637/0296/products/bolt-265-bvl_1024x1024_abeba163-4e03-4a71-abef-69f44d6670ab_large.jpg?v=1638996316', 103.95, 35);
+
+insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
+values('boots', 'Trigger Finger Combat Boots [BOLT-425]', 'https://cdn.shopify.com/s/files/1/2637/0296/products/bolt-425-bvl_1024x1024_771133fd-e714-4cb4-ae90-69bb85c3afe8_large.jpg?v=1670353730', 114.95, 36);
+
+insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
+values('shoes', 'Death Punch Creeper Sneakers', 'https://cdn.shopify.com/s/files/1/2637/0296/products/xxcxd_large.jpg?v=1663778570', 102.95, 37);
+
+insert into "Catalog" ("itemType", "itemName", "itemImage", "price", "productId")
+values('shoes', 'Black Mass Sneakers', 'https://cdn.shopify.com/s/files/1/2637/0296/products/sneeker-270-01_large.jpg?v=1661285617', 99.95, 38);
 
 insert into "User" ("username", "email")
 values('Ralaxian', 'jtdawson@icloud.com')

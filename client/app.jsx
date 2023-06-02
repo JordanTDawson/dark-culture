@@ -7,12 +7,15 @@ import Cart from './pages/cart';
 import NotFound from './pages/not-found';
 import BrandFooter from './components/brand-footer';
 import parseRoute from './lib/parse-route';
+import Loader from './components/loader';
 
 export default function App() {
   const [route, setRoute] = useState(parseRoute(window.location.hash));
+  const [isLoading, setIsLoading] = useState(true);
 
   function handleChange(event) {
     setRoute(parseRoute(window.location.hash));
+    setIsLoading(true);
   }
 
   useEffect(() => {
@@ -20,34 +23,46 @@ export default function App() {
     return () => window.removeEventListener('hashchange', handleChange);
   }, []);
 
+  useEffect(() => {
+    setTimeout(() => { setIsLoading(false); }, 1000);
+  }, [route]);
+
   function renderPage() {
     if (route.path === '') {
 
-      return <Home />;
+      return { component: <Home />, showFooter: true };
 
     } else if (route.path === 'catalog') {
 
-      return <Catalog />;
+      return { component: <Catalog />, showFooter: true };
 
     } else if (route.path === 'products') {
 
-      const productId = route.params.get('productId');
-      return <ProductDetails productId={productId}/>;
+      const productId = Number(route.params.get('productId'));
+      return { component: <ProductDetails productId={productId} />, showFooter: false };
 
     } else if (route.path === 'cart') {
 
-      return <Cart />;
+      return { component: <Cart />, showFooter: false };
 
     } else {
-      return <NotFound />;
+      return { component: <NotFound />, showFooter: false };
     }
   }
 
   return (
     <>
       <NavBar />
-      { renderPage() }
-      <BrandFooter />
+      {isLoading
+        ? (
+          <Loader />
+          )
+        : (
+          <>
+            {renderPage().component }
+            {renderPage().showFooter && <BrandFooter /> }
+          </>
+          )}
     </>
   );
 }

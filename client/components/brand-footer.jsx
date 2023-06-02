@@ -4,14 +4,14 @@ import Navbar from 'react-bootstrap/Navbar';
 
 export default function BrandFooter() {
   return (
-    <Navbar bg="light" variant="light">
+    <Navbar className="" bg="light" variant="light">
       <Container className="justify-content-center">
-        <Navbar.Brand>SUPREME</Navbar.Brand>
-        <Navbar.Brand>SHEIN</Navbar.Brand>
-        <Navbar.Brand>GUCCI</Navbar.Brand>
-        <Navbar.Brand>BAPE</Navbar.Brand>
-        <Navbar.Brand>LOUIS VUITTON</Navbar.Brand>
-        <Navbar.Brand>NIKE</Navbar.Brand>
+        <Navbar.Brand className="title-font">DOC MARTEN'S</Navbar.Brand>
+        <Navbar.Brand className="title-font">HOT TOPIC</Navbar.Brand>
+        <Navbar.Brand className="title-font">ZUMIEZ</Navbar.Brand>
+        <Navbar.Brand className="title-font">VAMPIRE FREAKS</Navbar.Brand>
+        <Navbar.Brand className="title-font">SPENCER'S</Navbar.Brand>
+        <Navbar.Brand className="title-font">COMBAT BOOTS</Navbar.Brand>
       </Container>
     </Navbar>
   );
