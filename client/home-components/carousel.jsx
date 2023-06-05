@@ -1,6 +1,24 @@
 import React, { useState } from 'react';
 import { Carousel, Container, Image } from 'react-bootstrap';
 
+const carouselData = [
+  {
+    imageUrl: '/images/carousel-image-one.png',
+    caption: 'Check out some of the deals on our brand of clothing!',
+    description: 'Many celebrities say that we created many styles.'
+  },
+  {
+    imageUrl: '/images/carousel-image-second.png',
+    caption: 'Competitors wish they had our selection of clothing!',
+    description: 'Check out the catalog before they all get sold out!'
+  },
+  {
+    imageUrl: '/images/carousel-image-third.png',
+    caption: 'All of our hand crafted materials are designed specifically for every piece of clothing!',
+    description: 'We pride ourselves on keeping our customers happy with the quality of material!'
+  }
+];
+
 export default function HomeCarousel() {
   const [index, setIndex] = useState(0);
 
@@ -16,42 +34,20 @@ export default function HomeCarousel() {
       activeIndex={index}
       onSelect={handleIndex}
       variant="dark">
-        <Carousel.Item>
+        {carouselData.map((item, index) => (
+          <Carousel.Item key={index}>
           <Image
           style={{ height: 500, objectFit: 'cover' }}
           className="w-100"
-          src="/images/carousel-image-one.png"
-          alt="First slide"
-        />
-          <Carousel.Caption>
-            <h3 className="title-font">Check out some of the deals on our brand of clothing!</h3>
-            <p className="body-font">Many celebrities say that we created many styles.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <Image
-          style={{ height: 500, objectFit: 'cover' }}
-          className="w-100"
-          src="/images/carousel-image-second.png"
-          alt="Second slide"
+          src={item.imageUrl}
+          alt={`Slide ${index + 1}`}
           />
-          <Carousel.Caption
-          className="text-light">
-            <h3 className="title-font">Competitors wish they had our selection of clothing!</h3>
-            <p className="body-font">Check out the catalog before they all get sold out!</p>
+          <Carousel.Caption className="text-light">
+            <h3 className="title-font">{item.caption}</h3>
+            <p className="body-font">{item.description}</p>
           </Carousel.Caption>
         </Carousel.Item>
-        <Carousel.Item>
-          <Image style={{ height: 500, objectFit: 'cover' }}
-          className="w-100"
-          src="/images/carousel-image-third.png"
-          alt="Third slide"
-        />
-          <Carousel.Caption className="text-light" >
-            <h3 className="title-font">All of our hand crafted materials are designed specifically for every piece of clothing!</h3>
-            <p className="body-font">We pride ourselves on keeping our customers happy with the quality of material!</p>
-          </Carousel.Caption>
-        </Carousel.Item>
+        ))}
       </Carousel>
     </Container>
   );
