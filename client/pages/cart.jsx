@@ -82,7 +82,7 @@ export default function Cart() {
             <div className="text-center my-5">
               <h1>There are no items here.</h1>
               <Button variant="secondary" href="#catalog">
-                <div className="body-font">Return to catalog to get some awesome items.</div>
+                <span className="body-font">Return to catalog to get some awesome items.</span>
               </Button>
             </div>
           </div>

@@ -18,7 +18,7 @@ export default function HomeCarousel() {
       variant="dark">
         <Carousel.Item>
           <Image
-          style={{ height: 500, objectFit: cover }}
+          style={{ height: 500, objectFit: 'cover' }}
           className="w-100"
           src="/images/carousel-image-one.png"
           alt="First slide"
@@ -30,7 +30,7 @@ export default function HomeCarousel() {
         </Carousel.Item>
         <Carousel.Item>
           <Image
-          style={{ height: 500, objectFit: cover }}
+          style={{ height: 500, objectFit: 'cover' }}
           className="w-100"
           src="/images/carousel-image-second.png"
           alt="Second slide"
@@ -42,7 +42,7 @@ export default function HomeCarousel() {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <Image style={{ height: 500, objectFit: cover }}
+          <Image style={{ height: 500, objectFit: 'cover' }}
           className="w-100"
           src="/images/carousel-image-third.png"
           alt="Third slide"
