@@ -39,7 +39,7 @@ export default function App() {
     } else if (route.path === 'products') {
 
       const productId = Number(route.params.get('productId'));
-      return { component: <ProductDetails productId={productId} />, showFooter: false };
+      return { component: <ProductDetails productId={productId} />, showFooter: true };
 
     } else if (route.path === 'cart') {
 

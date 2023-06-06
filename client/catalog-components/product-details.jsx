@@ -86,7 +86,7 @@ export default function ProductDetails({ productId }) {
         </Container>
         <Container className="text-center py-2" >
           {addedToCart ? (
-              <Button className="body-font" variant="secondary" disabled >
+              <Button className="body-font" variant="secondary" >
                 <div className="title-font" >Added to Cart</div>
               </Button>
               ) : (

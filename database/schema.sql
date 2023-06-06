@@ -1,10 +1,22 @@
+-- Set client_min_messages to warning for a cleaner output.
+-- This is typically useful during development or debugging.
+
 set client_min_messages to warning;
 
--- DANGER: this is NOT how to do it in the real world.
--- `drop schema` INSTANTLY ERASES EVERYTHING.
+-- The lines below handle the schema setup and table creation.
+
+-- Drop the "public" schema if it exists. This is for demonstration purposes only.
+-- In a real-world scenario, caution should be exercised when modifying or dropping schemas.
+-- DANGER: The following command instantly erases everything within the "public" schema.
+-- Please be cautious and ensure you have a backup before executing this in a production environment.
+
 drop schema "public" cascade;
 
+-- Create a new "public" schema.
+
 create schema "public";
+
+-- Table creation statements continue below...
 
 CREATE TABLE "public"."User" (
 	"username" TEXT NOT NULL,
