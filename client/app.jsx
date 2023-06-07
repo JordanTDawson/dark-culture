@@ -12,6 +12,7 @@ import Loader from './components/loader';
 export default function App() {
   const [route, setRoute] = useState(parseRoute(window.location.hash));
   const [isLoading, setIsLoading] = useState(true);
+  const [isProductDetailsPage, setIsProductDetailsPage] = useState(false);
 
   function handleChange(event) {
     setRoute(parseRoute(window.location.hash));
@@ -24,7 +25,10 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    setTimeout(() => { setIsLoading(false); }, 1000);
+    setTimeout(() => {
+      setIsLoading(false);
+      setIsProductDetailsPage(route.path === 'products');
+    }, 1000);
   }, [route]);
 
   function renderPage() {
@@ -39,6 +43,7 @@ export default function App() {
     } else if (route.path === 'products') {
 
       const productId = Number(route.params.get('productId'));
+
       return { component: <ProductDetails productId={productId} />, showFooter: true };
 
     } else if (route.path === 'cart') {
@@ -46,23 +51,27 @@ export default function App() {
       return { component: <Cart />, showFooter: false };
 
     } else {
+
       return { component: <NotFound />, showFooter: false };
+      
     }
   }
 
   return (
-    <>
+    <div className="d-flex flex-column min-vh-100">
       <NavBar />
-      {isLoading
-        ? (
+      <div className="flex-grow-1">
+        {isLoading ? (
           <Loader />
-          )
-        : (
+        ) : (
           <>
-            {renderPage().component }
-            {renderPage().showFooter && <BrandFooter /> }
+            {renderPage().component}
           </>
-          )}
-    </>
+        )}
+      </div>
+      {renderPage().showFooter && (
+        <BrandFooter className={isProductDetailsPage ? 'sticky-bottom' : ''} />
+      )}
+    </div>
   );
 }
