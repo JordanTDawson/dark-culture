@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Offcanvas from 'react-bootstrap/Offcanvas';
@@ -10,7 +10,12 @@ const navLinks = [
 ];
 
 export default function NavBar() {
+  const [showOffCanvas, setShowOffCanvas] = useState(false);
   const expandValues = ['lg'];
+
+  const closeOffCanvas = () => {
+    setShowOffCanvas(false);
+  };
 
   return (
     <>
@@ -18,8 +23,13 @@ export default function NavBar() {
         <Navbar key={expand} className="sticky-top" bg="dark" variant="dark" expand={expand}>
           <Container fluid>
             <Navbar.Brand className="justify-content-end" href="/" >Dark Culture</Navbar.Brand>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <Navbar.Toggle
+              aria-controls={`offcanvasNavbar-expand-${expand}`}
+              onClick={() => setShowOffCanvas(prevState => !prevState)}
+            />
             <Navbar.Offcanvas
+              show={showOffCanvas}
+              onHide={closeOffCanvas}
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="end"
@@ -36,7 +46,12 @@ export default function NavBar() {
               <Offcanvas.Body>
                 <Nav className="flex-grow-1 pe-3">
                   {navLinks.map((link, index) => (
-                    <Nav.Link key={index} className="title-font" href={link.href}>
+                    <Nav.Link
+                      key={index}
+                      className="title-font"
+                      href={link.href}
+                      onClick={closeOffCanvas}
+                    >
                       {link.text}
                     </Nav.Link>
                   ))}
