@@ -3,27 +3,28 @@ import Products from '../catalog-components/products';
 import Loading from '../components/loader';
 
 export default function Catalog() {
-
   const [catalog, setCatalog] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/shoppingCatalog/Catalog')
-      .then(res => res.json())
-      .then(catalog => {
-        setCatalog(catalog)
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/api/shoppingCatalog/Catalog');
+        const catalogData = await response.json();
+        setCatalog(catalogData);
+      } catch (error) {
+        setCatalog([]);
+      } finally {
         setIsLoading(false);
-      })
-      .catch(catalog => setCatalog([]));
+      }
+    };
+
+    fetchData();
   }, []);
 
-  if (!catalog) {
-    return [];
-  } else if (isLoading) {
-    <Loading />
+  if (isLoading) {
+    return <Loading />;
   } else {
-    return (
-      <Products catalog={catalog} />
-    );
+    return <Products catalog={catalog} />;
   }
 }
