@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import CartItems from '../catalog-components/cart-items';
 import Button from 'react-bootstrap/Button';
 import Loading from '../components/loader';
-import { handlePayNowClick, updateTotalPrice, fetchCartItems } from '../util-files/cartutils';
+import { handlePayNowClick, updateTotalPrice, fetchCartItems } from '../util-files/cart-utils';
 
 export default function Cart() {
   const [cart, setCart] = useState([]);
@@ -26,7 +26,7 @@ export default function Cart() {
   if (isLoading) {
 
     return <Loading />;
-    
+
   }
 
   return (

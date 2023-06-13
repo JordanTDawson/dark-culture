@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Loading from '../components/loader';
+import { addToCart, fetchCartItem, fetchProduct } from '../util-files/product-utils'
 
 export default function ProductDetails({ productId }) {
   const [product, setProduct] = useState(null);
@@ -11,59 +12,37 @@ export default function ProductDetails({ productId }) {
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(true);
 
-  const addToCart = async () => {
-    if (addedToCart) {
-      setError('Already in Cart!');
-    } else {
-      try {
-        const response = await fetch('/api/shoppingCatalog/CartItems', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ productId, price: product.price, cartId: 1 }),
-        });
-        if (response.ok) {
-          setAddedToCart(true);
-        } else {
-          setAddedToCart(true);
-          setError('Already in Cart!');
-        }
-      } catch (error) {
-        setError('Failed to add item to Cart');
+  useEffect(() => {
+
+    const fetchData = async () => {
+
+      // Fetching cartItems data to check if the item is in the cart.
+      const addedToCart = await fetchCartItem(productId);
+      setAddedToCart(addedToCart);
+
+      // Fetching product from Catalog table with productId.
+      const product = await fetchProduct(productId);
+      setProduct(product);
+      setIsLoading(false);
+    };
+
+    fetchData();
+
+  }, [productId]);
+
+  const handleAddToCartClick = async () => {
+    try {
+      const isAdded = addToCart(productId, product);
+      if (isAdded) {
+        setAddedToCart(true);
+      } else {
+        setAddedToCart(true);
+        setError('Already in Cart!');
       }
+    } catch (error) {
+      setError('Failed to add item to Cart');
     }
   };
-
-  useEffect(() => {
-    const fetchCartItem = async () => {
-      try {
-        const response = await fetch(`/api/shoppingCatalog/CartItems`);
-        const cartItems = await response.json();
-        const addedToCart = cartItems.some((item) => item.productId === productId);
-        setAddedToCart(addedToCart);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchCartItem();
-  }, [productId]);
-
-  useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        const response = await fetch(`/api/shoppingCatalog/Catalog/${productId}`);
-        const product = await response.json();
-        setProduct(product);
-        setIsLoading(false);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchProduct();
-  }, [productId]);
 
   if (error) {
     return (
@@ -101,7 +80,7 @@ export default function ProductDetails({ productId }) {
               <div className="title-font">Added to Cart</div>
             </Button>
           ) : (
-            <Button variant="secondary" onClick={addToCart}>
+            <Button variant="secondary" onClick={handleAddToCartClick}>
               <div className="body-font">Add Item to Cart</div>
             </Button>
           )}

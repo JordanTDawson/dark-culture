@@ -11,8 +11,6 @@ export default function Products({ catalog }) {
     setProductId(Number(productId));
   }
 
-  console.log('catalog console.log', catalog);
-
   return (
     <Container className="w-100 my-3">
       <Row xs={1} sm={2} md={3} lg={4} xl={5} className="g-3">
