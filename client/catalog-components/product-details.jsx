@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import NotFound from '../pages/not-found';
+import { NotFound, Loader } from '../index';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Loading from '../components/loader';
 import { addToCart, fetchCartItem, fetchProduct } from '../util-files/product-utils'
 
 export default function ProductDetails({ productId }) {
@@ -56,7 +55,7 @@ export default function ProductDetails({ productId }) {
       </div>
     );
   } else if (isLoading) {
-    return <Loading />;
+    return <Loader />;
   } else if (!product) {
     return <NotFound />;
   } else {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import NotFound from '../pages/not-found';
+import { NotFound } from '../index';
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';

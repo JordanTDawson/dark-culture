@@ -1,15 +1,7 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
-
-const brandTitles = [
-  { text: "DOC MARTEN'S" },
-  { text: "HOT TOPIC" },
-  { text: "ZUMIEZ" },
-  { text: "VAMPIRE FREAKS" },
-  { text: "SPENCER'S" },
-  { text: 'COMBAT BOOTS' }
-];
+import { brandTitles } from '../../database/universal-components/brand-titles';
 
 export default function BrandFooter() {
   return (

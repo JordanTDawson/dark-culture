@@ -21,7 +21,6 @@ export default function CartItems({ productId, updateTotalPrice }) {
 
   return (
     <div>
-      {message && <Message text={message} />}
       {cartItem && (
         <Card className="catalog-item mx-1 my-4">
           <Card.Img className="catalog-image" alt={cartItem.itemName} variant="top" src={cartItem.itemImage} />

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Products from '../catalog-components/products';
-import Loading from '../components/loader';
+import { Loader, Products } from '../index';
 import { fetchCatalog } from '../util-files/product-utils'
 
 export default function Catalog() {
@@ -19,7 +18,7 @@ export default function Catalog() {
   }, []);
 
   if (isLoading) {
-    return <Loading />;
+    return <Loader />;
   } else {
     return <Products catalog={catalog} />;
   }

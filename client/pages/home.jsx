@@ -1,7 +1,5 @@
 import React from 'react';
-import HeroImage from '../home-components/hero-image';
-import ThreeImageCol from '../home-components/three-column-image';
-import HomeCarousel from '../home-components/carousel';
+import { HeroImage, ThreeImageCol, HomeCarousel } from '../index'
 
 export default function Home() {
   return (

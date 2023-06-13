@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-
-const navLinks = [
-  { text: 'Home', href: '/' },
-  { text: 'Catalog', href: '#catalog' },
-  { text: 'Cart', href: '#cart'}
-];
+import { navLinks } from '../../database/universal-components/navbar-data';
 
 export default function NavBar() {
   const [showOffCanvas, setShowOffCanvas] = useState(false);

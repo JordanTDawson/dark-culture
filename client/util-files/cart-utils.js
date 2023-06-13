@@ -1,5 +1,5 @@
 // Utility function to handle the removal of an item from the cart.
-export const handleItemRemoval = async (productId, updateTotalPrice, setMessage) => {
+export const handleItemRemoval = async (productId, updateTotalPrice) => {
     try {
       const res = await fetch(`/api/shoppingCatalog/CartItems/${productId}`, {
         method: 'DELETE',

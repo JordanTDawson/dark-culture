@@ -1,7 +1,7 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 
-const Loading = () => {
+export default function Loader() {
   return (
     <Container className="d-flex align-items-center vh-100">
       <div className="text-center w-100">
@@ -10,5 +10,3 @@ const Loading = () => {
     </Container>
   );
 };
-
-export default Loading;

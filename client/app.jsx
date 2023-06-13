@@ -1,13 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import NavBar from './components/navbar';
-import Home from './pages/home';
-import Catalog from './pages/catalog';
-import ProductDetails from './catalog-components/product-details';
-import Cart from './pages/cart';
-import NotFound from './pages/not-found';
-import BrandFooter from './components/brand-footer';
-import parseRoute from './lib/parse-route';
-import Loader from './components/loader';
+import { NavBar, Home, Catalog, ProductDetails, Cart, NotFound, BrandFooter, parseRoute, Loader } from './index';
 
 export default function App() {
   const [route, setRoute] = useState(parseRoute(window.location.hash));
