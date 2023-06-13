@@ -4,63 +4,21 @@ import Row from 'react-bootstrap/Row';
 import CartItems from '../catalog-components/cart-items';
 import Button from 'react-bootstrap/Button';
 import Loading from '../components/loader';
+import { handlePayNowClick, updateTotalPrice, fetchCartItems } from '../util-files/cartutils';
 
 export default function Cart() {
   const [cart, setCart] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
-  const handlePayNowClick = async () => {
-    try {
-      await deleteCartItems();
-      setCart([]);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   useEffect(() => {
-    const fetchCartItems = async () => {
-      try {
-        const cartItems = await fetchCartItemsId();
-        setCart(cartItems);
-        updateTotalPrice(cartItems);
-        setIsLoading(false);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+    fetchCart();
 
-    fetchCartItems();
+    async function fetchCart() {
+      await fetchCartItems(setCart, setTotalPrice, setIsLoading);
+    }
   }, [cart]);
 
-  const updateTotalPrice = (cartItems) => {
-    if (!cartItems) {
-      return;
-    }
-    const totalPrice = cartItems.reduce((total, cartItem) => total + cartItem.price, 0).toFixed(2);
-    setTotalPrice(totalPrice);
-  };
-
-  const fetchCartItemsId = async () => {
-    const response = await fetch('/api/shoppingCatalog/CartItems');
-    if (!response.ok) {
-      throw new Error(`Failed to fetch cart items: ${response.status}`);
-    }
-    return response.json();
-  };
-
-  const deleteCartItems = async () => {
-    const response = await fetch('/api/shoppingCatalog/CartItems', {
-      method: 'DELETE',
-      headers: {
-        'Content-type': 'application/json',
-      },
-    });
-    if (!response.ok) {
-      throw new Error(`Failed to delete cart items: ${response.status}`);
-    }
-  };
 
   if (isLoading) {
     return <Loading />;
@@ -77,7 +35,7 @@ export default function Cart() {
           </Row>
           <Container>
             <h1>Total price: <div className="body-font">${totalPrice}</div></h1>
-            <Button variant="primary" onClick={handlePayNowClick}>
+            <Button variant="primary" onClick={() => handlePayNowClick(setCart)}>
               <div className="title-font">Pay Now</div>
             </Button>
           </Container>

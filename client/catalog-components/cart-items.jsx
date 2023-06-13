@@ -1,32 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import Message from './cart-message';
-import { handleItemRemoval } from '../util-files/cartutils';
+import { handleItemRemoval, fetchCartItem } from '../util-files/cartutils';
 
 export default function CartItems({ productId, updateTotalPrice }) {
   const [cartItem, setCartItem] = useState(null);
   const [message, setMessage] = useState(null);
 
   useEffect(() => {
-    const fetchCartItem = async () => {
-      try {
-        const res = await fetch(`/api/shoppingCatalog/Catalog/${productId}`);
-        if (res.status === 404) {
-          throw new Error('Cart not found');
-        }
-        const cartItem = await res.json();
-        setCartItem(cartItem);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+    // Utility function to fetch cart item data based on the provided productId and sets the state of the Cart Item.
+    fetchCartItem(productId, setCartItem);
 
-    fetchCartItem();
   }, [productId]);
 
   const handleRemoveItemClick = () => {
+    // Utility function to handle the removal of an item from the cart.
     handleItemRemoval(cartItem.productId, updateTotalPrice, setMessage);
+
   };
 
   return (
