@@ -15,13 +15,18 @@ export default function Cart() {
     fetchCart();
 
     async function fetchCart() {
+
+      // Fetch cart items and update the state
       await fetchCartItems(setCart, setTotalPrice, setIsLoading);
+
     }
   }, [cart]);
 
 
   if (isLoading) {
+
     return <Loading />;
+    
   }
 
   return (

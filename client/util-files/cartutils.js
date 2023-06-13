@@ -65,14 +65,17 @@ export const handlePayNowClick = async (setCart) => {
     }
 };
 
+// Utility function to calculate the total price of cart items.
 export const updateTotalPrice = (cartItems) => {
     if (!cartItems) {
       return 0;
     }
+    // Calculate the total price by summing up the price of each cart item
     const totalPrice = cartItems.reduce((total, cartItem) => total + cartItem.price, 0).toFixed(2);
     return totalPrice;
 };
 
+// Utility function to fetch cart items from the server
 export const fetchCartItems = async (setCart, setTotalPrice, setIsLoading) => {
     try {
       const cartItems = await fetchCartItemsId();
