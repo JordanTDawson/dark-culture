@@ -1,9 +1,4 @@
-/**
- * Utility function to add a product to the cart.
- * @param {string} productId - The ID of the product to add.
- * @param {object} product - The product details.
- * @returns {boolean} - Indicates whether the product was added to the cart.
- */
+// Utility function to add a product to the cart.
 export const addToCart = async (productId, product) => {
     try {
       const response = await fetch('/api/shoppingCatalog/CartItems', {
@@ -23,6 +18,7 @@ export const addToCart = async (productId, product) => {
     }
 };
 
+// Utility function to check CartItems for matching productId.
 export const fetchCartItem = async (productId) => {
     try {
       const response = await fetch(`/api/shoppingCatalog/CartItems`);
@@ -34,7 +30,8 @@ export const fetchCartItem = async (productId) => {
       return false;
     }
 };
-  
+
+// Utility function to fetch individual product data and return response.json
 export const fetchProduct = async (productId) => {
     try {
         const response = await fetch(`/api/shoppingCatalog/Catalog/${productId}`);
@@ -45,4 +42,15 @@ export const fetchProduct = async (productId) => {
         return null;
     }
 };
-  
+
+// Utility function to fetch entire catalog and return response.json
+export const fetchCatalog = async () => {
+    try {
+      const response = await fetch('/api/shoppingCatalog/Catalog');
+      const catalogData = await response.json();
+      return catalogData;
+    } catch (error) {
+      console.error(error);
+      return [];
+    }
+};
