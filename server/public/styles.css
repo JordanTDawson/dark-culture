@@ -11,6 +11,10 @@ h6 {
   font-family: "DM Serif Display", serif;
 }
 
+.logo-font {
+  font-family: 'Bebas Neue', sans-serif;
+}
+
 .title-font {
   font-family: "DM Serif Display", serif;
 }
@@ -51,8 +55,9 @@ h6 {
 }
 
 .catalog-image {
+  object-fit: contain;
   width: auto;
-  height: 400px;
+  height: 300px;
 }
 
 .catalog-item:hover {
@@ -62,11 +67,14 @@ h6 {
 
 .three-column-image {
   border: 1px solid;
+  background-color: #F5F5F5;
   transition: all 0.3s;
 }
 
 .three-column-image img {
   width: auto;
+  border: 1px solid;
+  border-top: none;
   height: 250px;
 }
 

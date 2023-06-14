@@ -31,19 +31,21 @@ export default function Cart() {
   return (
     <>
       {cart && cart.length > 0 && totalPrice > 0 ? (
-        <Container>
-          <Row xs={1} sm={2} md={3} lg={4} xl={4} className="g-4">
-            {cart.map((cartItem) => (
-              <CartItems key={cartItem.productId} productId={cartItem.productId} updateTotalPrice={updateTotalPrice} />
-            ))}
-          </Row>
-          <Container>
+        <>
+          <Container className="w-100 my-3">
+            <Row xs={1} sm={2} md={3} lg={4} xl={5} className="g-3">
+              {cart.map((cartItem) => (
+                <CartItems key={cartItem.productId} productId={cartItem.productId} updateTotalPrice={updateTotalPrice} />
+              ))}
+            </Row>
+          </Container>
+          <Container className="w-100 my-3" style={{ borderRadius: 10, border: '1px solid'}}>
             <h1>Total price: <div className="body-font">${totalPrice}</div></h1>
-            <Button variant="primary" onClick={() => handlePayNowClick(setCart)}>
+            <Button className="mb-2" variant="primary" onClick={() => handlePayNowClick(setCart)}>
               <div className="title-font">Pay Now</div>
             </Button>
-          </Container>
         </Container>
+      </>
       ) : (
         <div className="message-content">
           <div className="text-center my-5">

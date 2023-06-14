@@ -22,7 +22,7 @@ export default function CartItems({ productId, updateTotalPrice }) {
   return (
     <div>
       {cartItem && (
-        <Card className="catalog-item mx-1 my-4">
+        <Card className="catalog-item">
           <Card.Img className="catalog-image" alt={cartItem.itemName} variant="top" src={cartItem.itemImage} />
           <Card.Body className="text-center">
             <Card.Title className="title-font">{cartItem.itemName}</Card.Title>

@@ -13,7 +13,7 @@ export default function ThreeImageCol() {
           <Col key={index} xs={12} md={4} className="my-3">
           <a className="text-decoration-none text-black" href="#catalog">
             <div className="three-column-image">
-              <Image className="rounded" src={item.imageUrl} />
+              <Image className="m-0 p-0" src={item.imageUrl} />
               <h1>{item.title}</h1>
             </div>
           </a>

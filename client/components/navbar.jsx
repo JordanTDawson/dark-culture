@@ -16,7 +16,7 @@ export default function NavBar() {
       {expandValues.map(expand => (
         <Navbar key={expand} className="sticky-top" bg="dark" variant="dark" expand={expand}>
           <Container fluid>
-            <Navbar.Brand className="justify-content-end" href="/" >Dark Culture</Navbar.Brand>
+            <Navbar.Brand className="logo-font justify-content-end" href="/" >Dark Culture</Navbar.Brand>
             <Navbar.Toggle
               aria-controls={`offcanvasNavbar-expand-${expand}`}
               onClick={() => setShowOffCanvas(prevState => !prevState)}
@@ -29,7 +29,7 @@ export default function NavBar() {
               placement="end"
             >
               <Offcanvas.Header closeButton>
-                <Offcanvas.Title className="text-dark text-decoration-none"
+                <Offcanvas.Title className="logo-font text-dark text-decoration-none"
                   id={`offcanvasNavbarLabel-expand-${expand}`}
                   href="/"
                   as="a"

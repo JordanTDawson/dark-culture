@@ -8,7 +8,7 @@ export const imageData = [
     title: "Men's Pants"
   },
   {
-    imageUrl: 'https://cdn.shopify.com/s/files/1/2637/0296/products/bolt-265-bvl_1024x1024_abeba163-4e03-4a71-abef-69f44d6670ab_large.jpg?v=1638996316',
+    imageUrl: 'https://cdn.media.amplience.net/i/hottopic/20033495_av1?$productTileDesktop$&fmt=auto',
     title: "Men's Boots"
   }
 ];

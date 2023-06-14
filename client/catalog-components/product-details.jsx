@@ -61,12 +61,12 @@ export default function ProductDetails({ productId }) {
   } else {
     return (
       <>
-        <Button href="#catalog" variant="secondary">
+        <Button className="m-2" href="#catalog" variant="secondary">
           <div className="body-font"> &lt; Back to Catalog </div>
         </Button>
-        <Container className="d-flex justify-content-center">
-          <Card className="text-center w-25">
-            <Card.Img src={product.itemImage} />
+        <Container className="d-flex justify-content-center w-100">
+          <Card className="text-center mh-50 mw-100">
+            <Card.Img src={product.itemImage} rounded />
             <Card.Body className="text-center">
               <Card.Title className="title-font">{product.itemName}</Card.Title>
               <Card.Text className="body-font">${product.price.toFixed(2)}</Card.Text>
