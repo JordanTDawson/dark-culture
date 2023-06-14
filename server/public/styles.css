@@ -12,7 +12,7 @@ h6 {
 }
 
 .logo-font {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: "Bebas Neue", sans-serif;
 }
 
 .title-font {
@@ -67,7 +67,7 @@ h6 {
 
 .three-column-image {
   border: 1px solid;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   transition: all 0.3s;
 }
 
