@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+import { Card, Button } from 'react-bootstrap';
 import { handleItemRemoval, fetchCartItem } from '../util-files/cart-utils';
 
 export default function CartItems({ productId, updateTotalPrice }) {

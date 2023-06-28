@@ -1,6 +1,5 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
+import { Container, Navbar } from 'react-bootstrap';
 import { brandTitles } from '../../database/universal-components/brand-titles';
 
 export default function BrandFooter() {

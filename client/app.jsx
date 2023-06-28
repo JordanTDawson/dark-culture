@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { NavBar, Home, Catalog, ProductDetails, Cart, NotFound, BrandFooter, parseRoute, Loader } from './index';
+import Button from 'react-bootstrap/Button';
 
 export default function App() {
   const [route, setRoute] = useState(parseRoute(window.location.hash));
@@ -45,12 +46,12 @@ export default function App() {
     } else {
 
       return { component: <NotFound />, showFooter: false };
-      
+
     }
   }
 
   return (
-    <div className="d-flex flex-column min-vh-100">
+    <div className="d-flex flex-column">
       <NavBar />
       <div className="flex-grow-1">
         {isLoading ? (
@@ -64,6 +65,7 @@ export default function App() {
       {renderPage().showFooter && (
         <BrandFooter className={isProductDetailsPage ? 'sticky-bottom' : ''} />
       )}
+      <Button>something</Button>
     </div>
   );
 }

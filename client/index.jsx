@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './app';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-export { default as NavBar } from './components/navbar';
+export { default as NavBar } from './components/Navbar';
 export { default as Home } from './pages/home';
 export { default as Catalog } from './pages/catalog';
 export { default as Products } from './catalog-components/products';

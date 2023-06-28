@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
-import Offcanvas from 'react-bootstrap/Offcanvas';
+import { Navbar, Nav, Container, Offcanvas } from 'react-bootstrap';
 import { navLinks } from '../../database/universal-components/navbar-data';
 
 export default function NavBar() {

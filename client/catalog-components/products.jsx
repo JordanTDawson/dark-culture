@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { NotFound } from '../index';
-import Container from 'react-bootstrap/Container';
-import Card from 'react-bootstrap/Card';
-import Row from 'react-bootstrap/Row';
+import { Container, Card, Row } from 'react-bootstrap';
 
 export default function Products({ catalog }) {
   const [productId, setProductId] = useState(null);

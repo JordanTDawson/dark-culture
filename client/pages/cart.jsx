@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap/Button';
+import { Container, Row, Button } from 'react-bootstrap';
 import { CartItems, Loader } from '../index';
 import { handlePayNowClick, updateTotalPrice, fetchCartItems } from '../util-files/cart-utils';
 

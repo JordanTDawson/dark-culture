@@ -1,8 +1,5 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Image from 'react-bootstrap/Image';
+import { Container, Row, Col, Image } from 'react-bootstrap/';
 import { imageData } from '../../database/home-components-data.js/three-product-image';
 
 export default function ThreeImageCol() {
