@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Carousel, Container, Image } from 'react-bootstrap';
-import { carouselData } from '../../database/home-components-data.js/carousel-data';
+import { carouselData } from '../../database/home-components-data/carousel-data';
 
 export default function HomeCarousel() {
   const [index, setIndex] = useState(0);

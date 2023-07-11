@@ -8,6 +8,7 @@ const db = new pg.Pool({
     rejectUnauthorized: false
   }
 });
+
 const ClientError = require('./client-error');
 const express = require('express');
 const staticMiddleware = require('./static-middleware');
@@ -19,31 +20,28 @@ app.use(staticMiddleware);
 
 app.use(express.json());
 
-app.get('/api/shoppingCatalog/Catalog/:productId', async (req, res, next) => {
-  try {
-    const productId = Number(req.params.productId);
-    if (!productId) {
-      throw new ClientError(400, 'productId must be a positive integer!');
-    }
-    const sql = `
-      select "productId",
-            "itemName",
-            "itemImage",
-            "price"
-      from "Catalog"
-      where "productId" = $1
-    `;
-    const params = [productId];
-    db.query(sql, params)
-      .then(result => {
-        if (!result.rows[0]) {
-          throw new ClientError(404, `cannot find product with productId ${productId}`);
-        }
-        res.json(result.rows[0]);
-      });
-  } catch (err) {
-    next(err);
+app.get('/api/shoppingCatalog/Catalog/:productId', (req, res, next) => {
+  const productId = Number(req.params.productId);
+  if (!productId) {
+    throw new ClientError(400, 'productId must be a positive integer!');
   }
+  const sql = `
+    select "productId",
+           "itemName",
+           "itemImage",
+           "price"
+    from "Catalog"
+    where "productId" = $1
+  `;
+  const params = [productId];
+  db.query(sql, params)
+    .then(result => {
+      if (!result.rows[0]) {
+        throw new ClientError(404, `cannot find product with productId ${productId}`);
+      }
+      res.json(result.rows[0]);
+    })
+    .catch(err => next(err));
 });
 
 app.get('/api/shoppingCatalog/CartItems', (req, res) => {

@@ -65,7 +65,7 @@ export default function App() {
       {renderPage().showFooter && (
         <BrandFooter className={isProductDetailsPage ? 'sticky-bottom' : ''} />
       )}
-      <Button>something</Button>
+      <Button className="circle-button" variant="secondary" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>^</Button>
     </div>
   );
 }
